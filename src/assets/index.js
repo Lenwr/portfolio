@@ -25,7 +25,13 @@ import youtube from './youtube.png'
 import instagram from './Instagram.png'
 import facebook from './Facebook.png'
 import vue from './Vue.png'
-
+import softr from './softr.png'
+import expressJs from './express.png'
+import airtable from './airtable.png'
+import javascript from './javascript.png'
+import linkedin from './LinkedIn.png'
+import github from './github.png'
+import contactusbg from './contactusbg.png'
 
 export {
     logo,
@@ -38,14 +44,14 @@ export const aboutSection = [
     {
         id: 1,
         image: "https://img.freepik.com/vecteurs-libre/gens-dessinent-elements-page-web-smartphone-ecran-lcd-developpement-frontal-il-concept-processus-developpement-logiciel-palette-bleu-corail-rose-illustration-vectorielle_335657-1640.jpg?t=st=1715768863~exp=1715772463~hmac=fe21782e0b61c55941f37111f2b1ab7f125d9ace974afd0f278c7fa4c55bd03d&w=1800",
-        title: "Développeur frontEnd ",
-        description:"texte"
+        title: "Développement web frontEnd ",
+        description:""
     },
     {
         id: 2,
-        image: "https://img.freepik.com/vecteurs-libre/planification-du-developpement-interface-du-site-web-developpe-personnages-plats-equipe-ui-ux-conception-contenu-creation-logiciels-informatiques-illustration-concept-developpement-web_335657-1762.jpg?t=st=1715769063~exp=1715772663~hmac=bbec3633747280af1eee76a918af52e3aeba6b79315578c18ed1c44644378710&w=1060",
-        title: "UI/UX ",
-        description:"texte"
+        image: "https://d1rluokkqqu56n.cloudfront.net/wpapp/uploads/2023/08/07144831/no-code-1.jpeg",
+        title: "Développement No Code ",
+        description:""
     },
 ]
 
@@ -63,8 +69,57 @@ export {
     mysql,
     react,
     robo,
-    vue
+    vue,
+    softr,
+    javascript,
+    airtable,
+    expressJs,
+    linkedin,
+    github,
+    contactusbg
 
 }
+
+
+export const portfolio=[
+    {
+        id:1,
+        title:'AD & Co',
+        type:'Site Web',
+        desc:"Site Vitrine pour une agence de consulting en Markéting et communication",
+        imageUrl:"https://adcoagency.fr/",
+    },
+    {
+        id:2,
+        title:'MaPharma',
+        type:'Site Web',
+        desc:"Site pour une entreprise qui met en relation les pharmacies avec les particuliers",
+        imageUrl:"https://mapharma.vercel.app/accueil"
+    },
+    {
+        id:3,
+        title:'WefretAfrica',
+        type:'Site Web',
+        desc:"Site vitrine pour une entreprise de Fret Maritime et Aérien",
+        imageUrl:"https://www.wefretafrica.fr/"
+    },
+    {
+        id:4,
+        title:'LemonTri',
+        type:'WebApp',
+        desc:"Une application pour aider au tri des déchets",
+        imageUrl:"https://lemon-tri-iang.vercel.app/"
+    },
+    {
+        id:5,
+        title:'CevaApp',
+        type:'WebApp',
+        desc:"Une application pour aider a l'enregistrement des transporteurs et camions dans un parc automobile",
+        imageUrl:"https://cevafront.vercel.app/"
+    },
+
+
+]
+
 
 

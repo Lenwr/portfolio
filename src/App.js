@@ -3,6 +3,9 @@ import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
 import AboutMe from "./Components/aboutMe";
 import Skills from "./Components/Skills";
+import Footer from "./Components/Footer";
+import Contact from "./Components/Contact";
+import Portfolio from "./Components/Portfolio";
 
 function App() {
   return (
@@ -16,9 +19,12 @@ function App() {
       {/*  Skills */}
         <Skills />
       {/* Portfolio */}
+        <Portfolio />
       {/* Companies */}
       {/* Contact Us  */}
+        <Contact />
       {/* Footer  */}
+        <Footer />
     </div>
   );
 }

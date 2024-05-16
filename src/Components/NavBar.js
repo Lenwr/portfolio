@@ -31,7 +31,7 @@ function NavBar(props) {
                 }
                 {
                     toggle?
-                        <ul className="flex flex-col mt-8 bg-gray-300 p-4 ">
+                        <ul className="flex absolute right-1 flex-col mt-8 rounded-md bg-gray-300 p-4 ">
                             <li className="p-3 transition ease-in-out hover:scale-110 cursor-pointer">Accueil</li>
                             <li className="p-3 transition ease-in-out hover:scale-110 cursor-pointer">A propos</li>
                             <li className="p-3 transition ease-in-out hover:scale-110 cursor-pointer">Compétences</li>

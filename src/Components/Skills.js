@@ -12,10 +12,10 @@ function Skills(props) {
             <div className='flex flex-col md:flex-row  justify-evenly px-8 md:px-0 mt-8 '>
                 <div className='grid grid-cols-4 md:grid-cols-4 gap-8  items-center'>
                     {skillsList.map((item, index)=>(
-                        <div className='w-[60px] transition ease-in-out delay-100 hover:scale-125 bg-purple-50
+                        <div className='w-[80px] transition ease-in-out delay-100 hover:scale-125 bg-purple-50
                  p-3 rounded-full' >
                             <img src={item.icon} alt=""
-                                 className="w-[60px]"/>
+                                 className="w-[80px]"/>
                         </div>
 
                     ))}
