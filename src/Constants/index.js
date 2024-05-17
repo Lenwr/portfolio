@@ -6,7 +6,7 @@ import {
     react, softr,
     vue,
     linkedin,
-    github
+    github, logoLemonTri
 } from "../assets"
 
 
@@ -26,6 +26,29 @@ export const AppText = {
 
 
 }
+
+
+export const dataFormation = {
+    title: "Formation",
+    icon: logoLemonTri,
+    color: "#79472E",
+    infos: {
+        image: logoLemonTri,
+        subtitle: "Formations",
+    },
+    cycleData: [
+        {image: vue, label: "VueJS",},
+        {image: angular, label: "Angular",},
+        {image: react, label: "React"},
+        {image: javascript, label: "Javascript"},
+        {image: firebase, label: "Firebase"},
+        {image: expressJs, label: "ExpressJs"},
+        {image: softr, label: "Softr"},
+        {image: airtable, label: "Airtable"}
+    ]
+}
+
+
 
 export const skillsList = [
     {
