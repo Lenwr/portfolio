@@ -26,12 +26,12 @@
 }
 
 .see-more-hide-1 {
-    left: -95px;
+    left: -180px;
     transform: rotate(60deg);
 }
 
 .see-more-hide-2 {
-    right: -101px;
+    right: -180px;
     transform: rotate(-60deg);
 }
 

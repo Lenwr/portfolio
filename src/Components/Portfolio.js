@@ -47,7 +47,7 @@ function Portfolio(props) {
             <div className='grid grid-cols-2 items-center content-center md:grid-cols-3 lg:grid-cols-3
         md:px-24 lg:px-48 p-4 '>
                 {portfolioList.map((item,index)=>(
-                    <a href={item.imageUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={item.url} target="_blank" rel="noopener noreferrer">
                     <div className='p-2 flex flex-col m-2 rounded-lg bg-blue-100
                 transition-all ease-in-out group hover:scale-110'>
                         <img src={item.imageUrl} className="h-[180px] object-cover rounded-lg" alt=""/>
