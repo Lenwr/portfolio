@@ -4,13 +4,16 @@
     justify-content: center;
     border-radius: 50%;
     width: 400px;
-    height: 400px;
+    height: 200px;
     position: relative;
     transform-origin: center center;
 }
 
 .cycle-card {
-    top: 110px;
+    top: 50px;
     position: absolute;
-    transform-origin: center 350px;
+    transform-origin: center 200px;
+}
+.circle{
+
 }

@@ -7,11 +7,11 @@ function AboutMe(props) {
         <div className="mt-36">
             <img src={wave} className="w-screen relative hidden  " alt=""/>
             <img src={laptop} className="absolute mt-[-180px] md:mt-[-140px] w-[220px] md:w-[300px]" alt=""/>
-            <div className="h-[300px] bg-blue-800 w-full">
-                <h2 className="md:text-[50px] text-[40px] font-bold text-center text-white">A propos de <span
+            <div className="h-[400px] bg-blue-400 w-full">
+                <h2 className="md:text-[50px] p-4 text-[30px] font-bold text-center text-white">A propos de <span
                     className="text-black"> Moi </span></h2>
-                <h2 className="text-white text-center pt-6
-               md:mt-4 px-10 md:px-64 lg:px-80
+                <h2 className="text-white md:text-[20px] text-[13px]
+               md:mt-4 px-10 md:px-64 lg:px-80 text-justify
                ">{AppText.aboutMeDescription}</h2>
             </div>
             <div className="md:flex-row justify-around

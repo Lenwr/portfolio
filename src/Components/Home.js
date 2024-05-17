@@ -22,7 +22,7 @@ function Home(props) {
                     </h1>
 
                 </div>
-                <h1 className="text-gray-400">{AppText.aboutMeDescription}</h1>
+                <h1 className="text-gray-400">{AppText.description}</h1>
                 <button className="bg-blue-800 p-2 mt-4 px-3 rounded-md
              transition-all ease-in-out hover:scale-110 text-white "> <a href={`tel:${+33676492528}`} className="bg-blue-800 p-2 mt-4 px-3 rounded-md transition-all ease-in-out hover:scale-110 text-white">
                     Appeler

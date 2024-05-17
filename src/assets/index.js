@@ -101,7 +101,7 @@ export const portfolio=[
         title:'MaPharma',
         type:'Site Web',
         desc:"Site pour une entreprise qui met en relation les pharmacies avec les particuliers",
-        url:"",
+        url:"https://mapharma.vercel.app/accueil",
         imageUrl:logoMapharma
     },
     {
@@ -117,7 +117,7 @@ export const portfolio=[
         title:'LemonTri',
         type:'WebApp',
         desc:"Une application pour aider au tri des déchets",
-        url:"",
+        url:"https://lemon-tri-iang.vercel.app/",
         imageUrl:logoLemonTri
     },
     {

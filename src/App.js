@@ -22,7 +22,9 @@ function App() {
         <Portfolio />
       {/* Companies */}
       {/* Contact Us  */}
-        <Contact />
+        <div id="contact" >
+            <Contact  />
+        </div>
       {/* Footer  */}
         <Footer />
     </div>
