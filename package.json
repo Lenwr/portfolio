@@ -10,7 +10,6 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-microlink": "^2.3.0",
     "react-scripts": "5.0.1",
     "typewriter-effect": "^2.21.0",
     "web-vitals": "^2.1.4"

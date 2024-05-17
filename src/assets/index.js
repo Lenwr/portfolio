@@ -32,6 +32,11 @@ import javascript from './javascript.png'
 import linkedin from './LinkedIn.png'
 import github from './github.png'
 import contactusbg from './contactusbg.png'
+import logoLemonTri from'./logoLemonTri.png'
+import logoMapharma from './banniereMapharma.jpeg'
+import logoWefretafrica from './logoWefretafrica.png'
+import logoCeva from './logoCeva.jpeg'
+import logoADCO from './logoADCO.svg'
 
 export {
     logo,
@@ -76,10 +81,11 @@ export {
     expressJs,
     linkedin,
     github,
-    contactusbg
+    contactusbg,
+    logoMapharma,
+    logoLemonTri
 
 }
-
 
 export const portfolio=[
     {
@@ -87,39 +93,43 @@ export const portfolio=[
         title:'AD & Co',
         type:'Site Web',
         desc:"Site Vitrine pour une agence de consulting en Markéting et communication",
-        imageUrl:"https://adcoagency.fr/",
+        url:"https://adcoagency.fr/",
+        imageUrl:logoADCO,
     },
     {
         id:2,
         title:'MaPharma',
         type:'Site Web',
         desc:"Site pour une entreprise qui met en relation les pharmacies avec les particuliers",
-        imageUrl:"https://mapharma.vercel.app/accueil"
+        url:"",
+        imageUrl:logoMapharma
     },
     {
         id:3,
         title:'WefretAfrica',
         type:'Site Web',
         desc:"Site vitrine pour une entreprise de Fret Maritime et Aérien",
-        imageUrl:"https://www.wefretafrica.fr/"
+        url:"https://www.wefretafrica.fr",
+        imageUrl:logoWefretafrica
     },
     {
         id:4,
         title:'LemonTri',
         type:'WebApp',
         desc:"Une application pour aider au tri des déchets",
-        imageUrl:"https://lemon-tri-iang.vercel.app/"
+        url:"",
+        imageUrl:logoLemonTri
     },
     {
         id:5,
         title:'CevaApp',
         type:'WebApp',
-        desc:"Une application pour aider a l'enregistrement des transporteurs et camions dans un parc automobile",
-        imageUrl:"https://cevafront.vercel.app/"
+        desc:"Une application pour l'enregistrement de transporteurs dans un parc auto",
+        url:"https://cevafront.vercel.app/",
+        imageUrl:logoCeva
     },
 
 
 ]
-
 
 

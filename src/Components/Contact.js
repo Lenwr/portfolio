@@ -50,10 +50,10 @@ function Contact(props) {
             <form onSubmit={(event) => sendMessage(event)}>
                 <div className='flex flex-row  justify-center '>
                     <SectionHeading secondTitle={AppText.Contact} firstTitle="Me"/>
-                    <img src={phone} className="w-[80px] ml-4"/>
+                    <img src={phone} alt="" className="w-[80px] ml-4"/>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 justify-evenly px-10 md:px-44'>
-                    <img src={contactusbg} className="w-[300px] mr-10"/>
+                    <img src={contactusbg} alt="" className="w-[300px] mr-10"/>
                     <div className='w-full'>
                         <div className=" flex flex-col">
                             <label className='text-black '> Nom</label>
