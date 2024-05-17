@@ -25,16 +25,5 @@
     border-radius: 25px;
 }
 
-.see-more-hide-1 {
-    left: -180px;
-    transform: rotate(60deg);
-    width: 900px;
-}
-
-.see-more-hide-2 {
-    right: -180px;
-    transform: rotate(-60deg);
-}
-
 
 

@@ -52,7 +52,7 @@ function Portfolio(props) {
                 transition-all ease-in-out group hover:scale-110'>
                         <img src={item.imageUrl} className="h-[180px] object-cover rounded-lg" alt=""/>
                         <h1 className='text-[14px] group-hover:scale-110 mt-2 text-center  font-bold'>{item.title}</h1>
-                        <h1 className='text-[12px] text-gray-500 px-6 pb-3'>{item.desc}</h1>
+                        <h1 className='text-[12px] text-gray-500 px-6 pb-3'></h1>
                     </div>
                     </a>
                 ))}

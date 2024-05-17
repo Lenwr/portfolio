@@ -68,7 +68,7 @@ function Contact(props) {
                         </div>
                         <div className='flex flex-col '>
                             <label className='text-black '>Email</label>
-                            <input placeholder='votrenom@gmail.com'
+                            <input placeholder=''
                                    type="email"
                                    name="email"
                                    value={email}

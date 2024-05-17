@@ -19,7 +19,7 @@ function AboutMe(props) {
             flex flex-col w-full items-center">
                 {
                     aboutSection.map((item, index) => (
-                        <div className=" group hover:bg-blue-800 mb-5 p-7 rounded-xl">
+                        <div className=" group hover:bg-blue-400 mb-5 p-7 rounded-xl">
                             <img src={item.image} alt="" className="w-[280px] h-[250px] object-cover rounded-lg"/>
                             <div className="w-[230px] pb-[20px]">
                                 <h2 className="font-bold text-center group-hover:text-white ">{item.title}</h2>
