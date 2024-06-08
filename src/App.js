@@ -14,17 +14,17 @@ function App() {
                 {/*  Nav Bar */}
                 <NavBar/>
                 {/* Intro  */}
-                <Home/>
+                <Home id="home"/>
                 {/* About Me */}
-                <AboutMe/>
+                <AboutMe id="aboutMe"/>
                 {/*  Skills */}
-                <Skills/>
+                <Skills id="skills"/>
                 {/* Portfolio */}
-                <Portfolio/>
+                <Portfolio id="portfolio"/>
                 {/* Companies */}
                 {/* Contact Us  */}
-                <div id="contact">
-                    <Contact/>
+                <div>
+                    <Contact />
                 </div>
                 {/* Footer  */}
                 <Footer/>

@@ -1,3 +1,4 @@
+"use client";
 import React, {useState} from 'react';
 import {logo} from '../assets'
 
@@ -12,10 +13,10 @@ function NavBar(props) {
                     <li className="mr-3 transition ease-in-out hover:scale-110 cursor-pointer">A propos</li>
                     <li className="mr-3 transition ease-in-out hover:scale-110 cursor-pointer">Compétences</li>
                     <li className="mr-3 transition ease-in-out hover:scale-110 cursor-pointer">Portfolio</li>
-                    <li className="mr-3 transition ease-in-out hover:scale-110 cursor-pointer">Contactez Moi</li>
+                 <li className="mr-3 transition ease-in-out hover:scale-110 cursor-pointer">Contactez Moi</li>
                 </ul>
             </div>
-            <div className=" mg:hidden lg:hidden">
+            <div className=" hidden mg:hidden lg:hidden">
                 {!toggle?
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                          onClick={()=>{setToggle(true)}}
