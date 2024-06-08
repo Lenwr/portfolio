@@ -4,7 +4,7 @@ import {logo} from '../assets'
 function NavBar(props) {
     const [toggle, setToggle] = useState(false)
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-between">
             <img src={logo} alt="Logo" className="h-5"/>
             <div className="hidden "  >
                 <ul className="flex flex-row">
@@ -15,7 +15,7 @@ function NavBar(props) {
                     <li className="mr-3 transition ease-in-out hover:scale-110 cursor-pointer">Contactez Moi</li>
                 </ul>
             </div>
-            <div className="hidden mg:hidden lg:hidden">
+            <div className=" mg:hidden lg:hidden">
                 {!toggle?
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                          onClick={()=>{setToggle(true)}}

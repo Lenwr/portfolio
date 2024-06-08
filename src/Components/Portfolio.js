@@ -35,7 +35,7 @@ function Portfolio(props) {
             text-blue-800 focus:text-white
             active:bg-blue-800 p-1 px-4 rounded-md
             focus:ring-violet-300 focus:bg-blue-800 focus:ring '>Tous</button>
-                <button  onClick={()=>filterPortfolio('Site Web')}  className='border-blue-800 border-2
+                <button  onClick={()=>filterPortfolio('Site Web')}  className='
             text-blue-800 focus:text-white
             active:bg-blue-800 p-1 px-4 rounded-md
             focus:ring-violet-300 focus:bg-blue-800 focus:ring '>Site Web</button>

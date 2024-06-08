@@ -37,12 +37,16 @@ import logoMapharma from './banniereMapharma.jpeg'
 import logoWefretafrica from './logoWefretafrica.png'
 import logoCeva from './logoCeva.jpeg'
 import logoADCO from './logoADCO.svg'
+import nextJs from "./next-js.svg"
+import logoPropreetvert from "./logoPropreetvert .png"
 
 export {
     logo,
     frontEnd,
     wave,
-    laptop
+    laptop,
+    nextJs,
+    logoPropreetvert
 }
 
 export const aboutSection = [
@@ -127,6 +131,14 @@ export const portfolio=[
         desc:"Une application pour l'enregistrement de transporteurs dans un parc auto",
         url:"https://cevafront.vercel.app/",
         imageUrl:logoCeva
+    },
+    {
+        id:6,
+        title:'Propre et Vert',
+        type:'Site Web',
+        desc:"Une application pour l'enregistrement de transporteurs dans un parc auto",
+        url:"https://propreetvert.fr/",
+        imageUrl:logoPropreetvert
     },
 
 

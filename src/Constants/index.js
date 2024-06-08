@@ -2,11 +2,10 @@ import {
     airtable,
     angular, expressJs,
     firebase, javascript,
-    nodejs,
     react, softr,
     vue,
     linkedin,
-    github, logoLemonTri
+    github, logoLemonTri, nextJs
 } from "../assets"
 
 
@@ -38,12 +37,12 @@ export const dataFormation = {
         subtitle: "Formations",
     },
     cycleData: [
-        {image: vue, label: "VueJS",},
-        {image: angular, label: "Angular",},
+        {image: nextJs, label: "NextJs",},
+        {image: expressJs, label: "ExpressJs"},
         {image: react, label: "React"},
+        {image: angular, label: "Angular",},
         {image: javascript, label: "Javascript"},
         {image: firebase, label: "Firebase"},
-        {image: expressJs, label: "ExpressJs"},
         {image: softr, label: "Softr"},
         {image: airtable, label: "Airtable"}
     ]
@@ -58,11 +57,15 @@ export const skillsList = [
     },
     {
         id: 1,
-        icon: angular
+        icon: nextJs
     },
     {
         id: 1,
         icon: react
+    },
+    {
+        id: 1,
+        icon: angular
     },
     {
         id: 1,
@@ -71,14 +74,6 @@ export const skillsList = [
     {
         id: 1,
         icon: firebase
-    },
-    {
-        id: 1,
-        icon: nodejs
-    },
-    {
-        id: 1,
-        icon: expressJs
     },
     {
         id: 1,

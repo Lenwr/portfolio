@@ -6,29 +6,31 @@ import Skills from "./Components/Skills";
 import Footer from "./Components/Footer";
 import Contact from "./Components/Contact";
 import Portfolio from "./Components/Portfolio";
-
+import {ChakraProvider} from '@chakra-ui/react'
 function App() {
-  return (
-    <div className="p-[20px]">
-      {/*  Nav Bar */}
-        <NavBar/>
-      {/* Intro  */}
-        <Home />
-      {/* About Me */}
-        <AboutMe />
-      {/*  Skills */}
-        <Skills />
-      {/* Portfolio */}
-        <Portfolio />
-      {/* Companies */}
-      {/* Contact Us  */}
-        <div id="contact" >
-            <Contact  />
-        </div>
-      {/* Footer  */}
-        <Footer />
-    </div>
-  );
+    return (
+        <ChakraProvider>
+            <div className="p-[20px]">
+                {/*  Nav Bar */}
+                <NavBar/>
+                {/* Intro  */}
+                <Home/>
+                {/* About Me */}
+                <AboutMe/>
+                {/*  Skills */}
+                <Skills/>
+                {/* Portfolio */}
+                <Portfolio/>
+                {/* Companies */}
+                {/* Contact Us  */}
+                <div id="contact">
+                    <Contact/>
+                </div>
+                {/* Footer  */}
+                <Footer/>
+            </div>
+        </ChakraProvider>
+    );
 }
 
 export default App;

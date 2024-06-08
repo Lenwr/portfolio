@@ -2,8 +2,8 @@ import React from 'react';
 import {AppText} from "../Constants";
 import {frontEnd} from '../assets'
 import Typewriter from 'typewriter-effect';
-
 function Home(props) {
+
     return (
         <div className="mt-7 flex px-4 md:px-10 flex-col items-center md:flex-row ">
             <div className='flex w-full flex-col  items-start content-end' >
@@ -21,11 +21,12 @@ function Home(props) {
                         />
                     </h1>
 
+
                 </div>
                 <h1 className="text-gray-400">{AppText.description}</h1>
                 <button className="bg-blue-800 p-2 mt-4 px-3 rounded-md
              transition-all ease-in-out hover:scale-110 text-white "> <a href={`tel:${+33676492528}`} className="bg-blue-800 p-2 mt-4 px-3 rounded-md transition-all ease-in-out hover:scale-110 text-white">
-                    Appeler
+                    Me contacter
                 </a> </button>
             </div>
             <img src={frontEnd} className="md:w-[400px]"  alt=""/>
