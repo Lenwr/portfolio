@@ -14,13 +14,13 @@ function App() {
                 {/*  Nav Bar */}
                 <NavBar/>
                 {/* Intro  */}
-                <Home id="home"/>
+                <Home />
                 {/* About Me */}
-                <AboutMe id="aboutMe"/>
+                <AboutMe />
                 {/*  Skills */}
-                <Skills id="skills"/>
+                <Skills />
                 {/* Portfolio */}
-                <Portfolio id="portfolio"/>
+                <Portfolio/>
                 {/* Companies */}
                 {/* Contact Us  */}
                 <div>
