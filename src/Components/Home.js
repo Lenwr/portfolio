@@ -43,9 +43,9 @@ function Home(props) {
                         Me contacter
                     </a> </button>
                     <button   onClick={handleDownload} className="bg-blue-800 p-2 mt-4 px-3 rounded-md
-             transition-all ease-in-out hover:scale-110 text-white "> <a className="bg-blue-800 p-2 mt-4 px-3 rounded-md transition-all ease-in-out hover:scale-110 text-white">
+             transition-all ease-in-out hover:scale-110 text-white ">
                         Mon CV
-                    </a> </button>
+                    </button>
                 </div>
 
             </div>
