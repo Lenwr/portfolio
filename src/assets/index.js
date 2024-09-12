@@ -39,6 +39,7 @@ import logoCeva from './logoCeva.jpeg'
 import logoADCO from './logoADCO.svg'
 import nextJs from "./next-js.svg"
 import logoPropreetvert from "./logoPropreetvert .png"
+import logoDkr from  "./logo.jpeg"
 
 export {
     logo,
@@ -139,6 +140,14 @@ export const portfolio=[
         desc:"Une application pour l'enregistrement de transporteurs dans un parc auto",
         url:"https://propreetvert.fr/",
         imageUrl:logoPropreetvert
+    },
+    {
+        id:6,
+        title:'DKR',
+        type:'Site Web',
+        desc:"Une menu en ligne par scan codeQR",
+        url:"https://dkr.vercel.app/",
+        imageUrl:logoDkr
     },
 
 

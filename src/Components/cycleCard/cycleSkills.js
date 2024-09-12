@@ -1,6 +1,7 @@
 
 import "./cycleSkills.css";
 
+
 const CycleSkills = ({ label, image }) => {
     return (
         <div className="cycle-card-container bg-amber-600">
