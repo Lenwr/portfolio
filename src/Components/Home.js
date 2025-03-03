@@ -2,12 +2,12 @@ import React from 'react';
 import {AppText} from "../Constants";
 import {frontEnd} from '../assets'
 import Typewriter from 'typewriter-effect';
-import cv from '../assets/cv.pdf'
+import CVJ from '../assets/CVJ.pdf';
 
 function Home(props) {
     const handleDownload = () => {
         // Mettez ici le lien vers votre CV
-        const cvUrl = cv;
+        const cvUrl = CVJ ;
         // Créez un élément <a> invisible pour déclencher le téléchargement
         const link = document.createElement('a');
         link.href = cvUrl;
