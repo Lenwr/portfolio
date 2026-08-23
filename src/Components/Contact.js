@@ -1,28 +1,26 @@
 import React, {useState} from 'react'
-import {contactusbg, phone} from '../assets'
-import {AppText} from '../Constants'
-import SectionHeading from '../reusable/sectionHeading'
+import {contactusbg} from '../assets'
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-function Contact(props) {
+
+emailjs.init({ publicKey: "dnBjox8ayfiBML1MH" });
+
+function Contact() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [feedback, setFeedback] = useState("");
     const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState("");
     const notify = () => toast("Formulaire envoyé");
 
-    (function(){
-        emailjs.init({
-            publicKey: "dnBjox8ayfiBML1MH",
-        });
-    })();
     const sendMessage = (event) => {
         event.preventDefault();
         if (!name || !email || !feedback) {
             return;
         }
         setLoading(true);
+        setStatus("");
         const templateParams = {
             from_name: `${name}" : "${email}`,
             to_name: "Jefferson ABALO",
@@ -32,15 +30,16 @@ function Contact(props) {
             .send("service_djdok9h", "template_87bi9zu", templateParams)
             .then(
                 () => {
-                    console.log("sucess")
-                    {notify()}
+                    notify();
+                    setStatus("Votre message a bien été envoyé.");
                     setLoading(false);
                     setName("");
                     setEmail("");
                     setFeedback("");
                 },
                 (err) => {
-                    console.log("FAILED...", err);
+                    console.error("Échec de l'envoi du formulaire", err);
+                    setStatus("L'envoi a échoué. Réessayez dans quelques instants.");
                     setLoading(false);
                 }
             );
@@ -49,48 +48,53 @@ function Contact(props) {
 
     return (
 
-        <div id="contact" className='flex flex-col justify-center mt-5'>
-            <form onSubmit={(event) => sendMessage(event)}>
-                <div className='flex flex-row  justify-center '>
-                    <SectionHeading secondTitle={AppText.Contact} firstTitle="Me"/>
-                    <img src={phone} alt="" className="w-[80px] "/>
-                </div>
-                    <div className=' "w-1/2 grid grid-cols-1 md:grid-cols-2 justify-evenly px-10 md:px-44'>
-                        <img src={contactusbg} alt="" className="w-[300px] mr-10"/>
-                        <div className='w-full'>
+        <section id="contact" className="scroll-mt-24 px-6 py-24 md:px-10">
+          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.85fr_1.15fr]">
+            <div>
+              <p className="section-kicker">Contact</p>
+              <h2 className="mt-3 text-4xl font-bold leading-tight md:text-6xl">Construisons quelque chose de <span className="gradient-text">mémorable.</span></h2>
+              <p className="mt-6 max-w-lg text-lg leading-8 text-slate-400">Une idée, une mission ou une opportunité ? Écris-moi et discutons de la meilleure façon de la concrétiser.</p>
+              <a className="mt-6 inline-flex text-sm font-semibold text-cyan-300 hover:text-cyan-200" href="mailto:jeffersonabalo@outlook.fr">jeffersonabalo@outlook.fr</a>
+              <img src={contactusbg} alt="" className="mt-8 hidden w-64 opacity-80 lg:block" loading="lazy"/>
+            </div>
+            <form onSubmit={(event) => sendMessage(event)} className="glass-card p-6 md:p-8">
+                        <div className="w-full space-y-5">
                             <div className=" flex flex-col">
-                                <label className='text-black '> Nom</label>
+                                <label htmlFor="name" className="mb-2 text-sm font-medium text-slate-300">Nom</label>
                                 <input placeholder='votre nom'
+                                       id="name"
                                        type="text"
                                        name="name"
                                        value={name}
                                        onChange={(e) => setName(e.target.value)}
                                        required
-                                       className='border-[1.5px] px-2 border-blue-800
-              hover:border-blue-800 rounded-md'/>
+                                       autoComplete="name"
+                                       className="form-field"/>
                             </div>
                             <div className='flex flex-col '>
-                                <label className='text-black '>Email</label>
+                                <label htmlFor="email" className="mb-2 text-sm font-medium text-slate-300">Email</label>
                                 <input placeholder=''
+                                       id="email"
                                        type="email"
                                        name="email"
                                        value={email}
                                        onChange={(e) => setEmail(e.target.value)}
                                        required
-                                       className='border-[1.5px] px-2 border-blue-800
-              hover:border-blue-800 rounded-md'/>
+                                       autoComplete="email"
+                                       className="form-field"/>
                             </div>
                             <div className='flex flex-col'>
-                                <label className='text-black '>Message</label>
-                                <textarea type="text" rows={7} placeholder='Votre message'
+                                <label htmlFor="feedback" className="mb-2 text-sm font-medium text-slate-300">Message</label>
+                                <textarea rows={7} placeholder='Votre message'
+                                          id="feedback"
                                           name="feedback"
                                           value={feedback}
                                           onChange={(e) => setFeedback(e.target.value)}
                                           required
-                                          className='border-[1.5px] px-2 hover:border-blue-800 border-blue-800 rounded-md'/>
+                                          className="form-field resize-none"/>
                                 <button type="submit" disabled={loading}
-                                        className='transition-all ease-in-out hover:scale-110 bg-blue-800 flex flex-row items-center justify-center text-[14px]  py-1 mt-5 text-white  rounded-md'>
-                                    {loading ? "Envoi en cours..." : "Envoyé"}
+                                        className="mt-6 flex w-full items-center justify-center rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300">
+                                    {loading ? "Envoi en cours..." : "Envoyer"}
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          strokeWidth={1.5} stroke="currentColor" className="ml-2 w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -98,13 +102,11 @@ function Contact(props) {
                                     </svg>
 
                                 </button>
+                                <p className={`mt-3 text-sm ${status.includes('échoué') ? 'text-red-300' : 'text-emerald-300'}`} role="status" aria-live="polite">{status}</p>
                             </div>
 
 
                         </div>
-
-
-                    </div>
                 <ToastContainer
                     position="top-right"
                     autoClose={1500}
@@ -118,7 +120,8 @@ function Contact(props) {
                     theme="light"
                 />
             </form>
-        </div>
+          </div>
+        </section>
 
     );
 }

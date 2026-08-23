@@ -35,11 +35,14 @@ import contactusbg from './contactusbg.png'
 import logoLemonTri from'./logoLemonTri.png'
 import logoMapharma from './banniereMapharma.jpeg'
 import logoWefretafrica from './logoWefretafrica.png'
-import logoCeva from './logoCeva.jpeg'
+import logoTracksend from './logo-tracksend.png'
+import logoAaronTravel from './logo-gate.png'
+import logoYsab from './logo-ysab.jpg'
+import logoSowOcaz from './logo-sow-ocaz.png'
+import logoTerangaCargo from './logo-teranga-cargo.jpg'
 import logoADCO from './logoADCO.svg'
 import nextJs from "./next-js.svg"
 import logoPropreetvert from "./logoPropreetvert .png"
-import logoDkr from  "./logo.jpeg"
 
 export {
     logo,
@@ -95,62 +98,137 @@ export {
 export const portfolio=[
     {
         id:1,
-        title:'AD & Co',
-        type:'Site Web',
-        desc:"Site Vitrine pour une agence de consulting en Markéting et communication",
-        url:"https://adcoagency.fr/",
-        imageUrl:logoADCO,
+        title:'TrackSend',
+        type:'SaaS',
+        status:'Produit personnel',
+        desc:"Plateforme de gestion logistique centralisant les colis, les clients, les chargements, les bordereaux de livraison et les communications.",
+        url:"https://tracksend.vercel.app/#/login",
+        imageUrl:logoTracksend,
+        stack:['Vue.js','Firebase','jsPDF','QR codes'],
+        featured:true,
+    },
+    {
+        id:10,
+        title:'WeFret Africa — Suivi colis',
+        type:'Portail client',
+        status:'Produit personnel',
+        desc:"Portail public permettant aux clients de consulter l’avancement de leur expédition à partir de leur numéro de suivi.",
+        url:"https://wefretafrica.vercel.app/",
+        imageUrl:logoWefretafrica,
+        stack:['Vue.js','Suivi logistique','Responsive'],
+        featured:false,
     },
     {
         id:2,
-        title:'MaPharma',
-        type:'Site Web',
-        desc:"Site pour une entreprise qui met en relation les pharmacies avec les particuliers",
-        url:"https://mapharma.vercel.app/accueil",
-        imageUrl:logoMapharma
+        title:'Aaron Travel',
+        type:'Application métier',
+        status:'Mission freelance',
+        desc:"Application de gestion logistique réunissant authentification, rôles utilisateurs, gestion des colis, QR codes, scan, suivi des statuts, notifications et documents PDF.",
+        url:'https://gate-self-three.vercel.app/#/dashboard',
+        imageUrl:logoAaronTravel,
+        stack:['Vue.js 3','Pinia','Firebase','Tailwind CSS','jsPDF'],
+        featured:true,
     },
     {
         id:3,
-        title:'WefretAfrica',
-        type:'Site Web',
-        desc:"Site vitrine pour une entreprise de Fret Maritime et Aérien",
-        url:"https://www.wefretafrica.fr",
-        imageUrl:logoWefretafrica
+        title:"Greff’Up",
+        type:'Impact social',
+        status:'Mission freelance',
+        desc:"Site institutionnel responsive de l’association des jeunes greffés : présentation de la mission, des actions, des témoignages et des moyens de rejoindre ou soutenir l’association.",
+        url:'https://greffup.fr/',
+        stack:['WordPress','Astra','SEO','Google Site Kit'],
+        featured:true,
     },
     {
         id:4,
-        title:'LemonTri',
-        type:'WebApp',
-        desc:"Une application pour aider au tri des déchets",
-        url:"https://lemon-tri-iang.vercel.app/",
-        imageUrl:logoLemonTri
+        title:'Checkup Impact',
+        type:'Application métier',
+        status:'Mission freelance',
+        desc:"Application associée à Greff’Up pour diffuser des questionnaires avant/après par QR code, comparer les statistiques, exporter les résultats et suivre les accompagnements.",
+        stack:['Next.js','TypeScript','Supabase','Recharts','Zod'],
+        featured:true,
     },
     {
         id:5,
-        title:'CevaApp',
-        type:'WebApp',
-        desc:"Une application pour l'enregistrement de transporteurs dans un parc auto",
-        url:"https://cevafront.vercel.app/",
-        imageUrl:logoCeva
+        title:'France Distribution',
+        type:'Application métier',
+        status:'Mission freelance',
+        desc:"Solution de gestion des produits et des stocks avec scan de codes-barres, intégration de l’API OpenFoodFacts, alertes et notifications.",
+        stack:['React','Redux','Supabase','Tailwind CSS'],
+        featured:true,
     },
     {
         id:6,
-        title:'Propre et Vert',
-        type:'Site Web',
-        desc:"Une application pour l'enregistrement de transporteurs dans un parc auto",
-        url:"https://propreetvert.fr/",
-        imageUrl:logoPropreetvert
+        title:'Transport Fomek',
+        type:'Logistique',
+        status:'Projet client en cours',
+        desc:"Conception d’une solution de gestion du fret entre la France et le Cameroun : enlèvements, colis, conteneurs, listes de colissage et suivi client.",
+        stack:['Application web','Gestion de fret','Suivi client'],
+        featured:false,
     },
     {
-        id:6,
-        title:'DKR',
-        type:'Site Web',
-        desc:"Une menu en ligne par scan codeQR",
-        url:"https://dkr.vercel.app/",
-        imageUrl:logoDkr
+        id:7,
+        title:'Sow Ocaz',
+        type:'Application web',
+        status:'Réalisation web',
+        desc:"Application web responsive dédiée à Sow Ocaz, conçue autour d’une expérience simple et accessible sur mobile comme sur ordinateur.",
+        url:'https://sowocaz.vercel.app/',
+        imageUrl:logoSowOcaz,
+        stack:['React','Application web','Responsive'],
+        featured:false,
     },
-
-
+    {
+        id:8,
+        title:'AD & Co',
+        type:'Site Web',
+        status:'Autre réalisation',
+        desc:"Site vitrine pour une agence de consulting en marketing et communication.",
+        url:"https://adcoagency.fr/",
+        imageUrl:logoADCO,
+        stack:[],
+        featured:false,
+    },
+    {
+        id:9,
+        title:'MaPharma',
+        type:'Site Web',
+        status:'Autre réalisation',
+        desc:"Plateforme mettant en relation les pharmacies avec les particuliers.",
+        url:"https://mapharma.vercel.app/accueil",
+        imageUrl:logoMapharma,
+        stack:[],
+        featured:false,
+    },
+    {
+        id:11,
+        title:'YSAB',
+        type:'Catalogue digital',
+        status:'Réalisation web',
+        desc:"Catalogue de pagnes permettant de découvrir les modèles disponibles et leurs différentes variantes de couleurs.",
+        url:'https://ysab.vercel.app/',
+        imageUrl:logoYsab,
+        stack:['Vue.js','Vite','Catalogue produit','Responsive'],
+        featured:false,
+    },
+    {
+        id:13,
+        title:'Paris Fret Transport',
+        type:'Logistique',
+        status:'Réalisation web',
+        desc:"Application métier pour accompagner les opérations de transport et de fret depuis un espace sécurisé, avec documents PDF et QR codes.",
+        url:'https://parisfrettransport.vercel.app/#/login',
+        stack:['Vue.js','Vite','jsPDF','QR codes'],
+        featured:false,
+    },
+    {
+        id:14,
+        title:'Teranga Cargo Groupage',
+        type:'Site & suivi logistique',
+        status:'Réalisation web',
+        desc:"Site de groupage France–Sénégal présentant l’enlèvement, l’expédition maritime et la réception à Dakar, avec demande de devis et suivi de colis.",
+        url:'https://www.terangacargogroupage.com/',
+        imageUrl:logoTerangaCargo,
+        stack:['Next.js','Site vitrine','Devis','Suivi colis'],
+        featured:true,
+    },
 ]
-
-

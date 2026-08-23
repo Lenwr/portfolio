@@ -13,10 +13,10 @@ export const AppText = {
     hello: 'Salut,',
     Iam: 'Je suis ',
     myName: 'Jefferson ABALO',
-    description:'',
-    aboutMeDescription: 'Ayant obtenu mon diplôme en Stratégies Digitales orienté Développement Web, je suis un professionnel dévoué et créatif à la recherche de nouvelles opportunités pour mettre en pratique mes compétences. Mon engagement et ma volonté constante d\'apprendre me permettent de m\'adapter rapidement, ce qui fait de moi un candidat idéal pour rejoindre votre équipe. Je suis impatient de relever de nouveaux défis et de participer activement à la création de produits numériques exceptionnels.',
+    description:'Je conçois des applications web métier et des plateformes SaaS qui centralisent les données, automatisent les opérations et simplifient le quotidien des équipes.',
+    aboutMeDescription: 'Développeur web full-stack, je transforme des besoins métier concrets en applications simples, sécurisées et efficaces. Mon parcours en développement web, stratégie digitale, télécommunications et administration réseau me permet d’intervenir aussi bien sur l’expérience utilisateur que sur l’architecture technique, la gestion des données et le référencement.',
     skills: 'Compétences',
-    frontEntDeveloper: 'Développeur FrontEnd',
+    frontEntDeveloper: 'Développeur Full-Stack',
     portfolio: 'PortFolio',
     contact: 'Contact',
     copywriteText:'Jefferson ABALO',
@@ -52,31 +52,31 @@ export const dataFormation = {
 
 export const skillsList = [
     {
-        id: 1,
+        id: 2,
         icon: vue
     },
     {
-        id: 1,
+        id: 3,
         icon: nextJs
     },
     {
-        id: 1,
+        id: 4,
         icon: react
     },
     {
-        id: 1,
+        id: 5,
         icon: angular
     },
     {
-        id: 1,
+        id: 6,
         icon: javascript
     },
     {
-        id: 1,
+        id: 7,
         icon: firebase
     },
     {
-        id: 1,
+        id: 8,
         icon: softr
     },
     {
@@ -90,15 +90,15 @@ export const socialNetwork=[
     {
         id:1,
         logo:linkedin,
+        name:'LinkedIn',
         url:'https://www.linkedin.com/in/jefferson-abalo-a49534166/'
     },
     {
-        id:1,
+        id:2,
         logo:github,
+        name:'GitHub',
         url:'https://github.com/Lenwr?tab=repositories'
     },
 ]
-
-
 
 

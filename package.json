@@ -2,6 +2,7 @@
   "name": "my-portfolio-website",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://127.0.0.1:3001",
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emailjs/browser": "^4.3.3",
@@ -26,6 +27,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:api": "node server.js",
+    "start:full": "npm run build && node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

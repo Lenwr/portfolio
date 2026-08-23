@@ -1,63 +1,42 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {portfolio} from "../assets";
-import {AppText } from "../Constants";
-import SectionHeading from '../reusable/sectionHeading'
-import {robo} from './../assets/index'
-function Portfolio(props) {
-    const [portfolioList,setPortfolioList]=useState([]);
-    const [portfolioListOrg,setPortfolioListOrg]=useState([]);
-
-    useEffect(()=>{
-        setPortfolioList(portfolio);
-        setPortfolioListOrg(portfolio)
-    },[])
-    const filterPortfolio=(type)=>{
-        if(type==='All')
-        {
-            setPortfolioList(portfolioListOrg);
-        }
-        else{
-            const result= portfolioListOrg.filter(item=>item.type===type);
-            setPortfolioList(result)
-            console.log(result)
-        }
+function Portfolio() {
+    const [portfolioList,setPortfolioList]=useState(portfolio.filter(item=>item.featured));
+    const filterPortfolio=(filter)=>{
+        if(filter==='All') setPortfolioList(portfolio);
+        else if(filter==='Featured') setPortfolioList(portfolio.filter(item=>item.featured));
+        else setPortfolioList(portfolio.filter(item=>item.status==='Mission freelance'));
     }
     return (
-        <div className='mt-5 flex justify-center flex-col'>
-            <div className='flex flex-row px-6 md:px-0 items-center justify-center'>
-                {/* <h1 className='text-[40px] font-bold'>{AppText.Creative}
-        <span className='text-blue-100'>{AppText.Portfolio}</span></h1> */}
-                <SectionHeading firstTitle={AppText.Creative} secondTitle={AppText.Portfolio} />
-                <img src={robo} className="w-[70px] ml-5 animate-bounce" alt=""/>
+        <section id="portfolio" className="scroll-mt-24 border-y border-white/10 bg-slate-900/60 px-6 py-24 md:px-10">
+          <div className="mx-auto max-w-7xl">
+            <p className="section-kicker">Portfolio</p>
+            <div className="mt-3 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <div><h2 className="text-3xl font-bold md:text-5xl">Applications métier & produits SaaS</h2><p className="mt-4 max-w-2xl text-slate-400">Je transforme des processus concrets en outils simples : gestion logistique, tracking, stocks, tableaux de bord, QR codes et automatisations.</p></div>
+              <div className="flex flex-wrap gap-2" aria-label="Filtrer les projets">
+                <button onClick={()=>filterPortfolio('Featured')} className="filter-button">Sélection</button>
+                <button onClick={()=>filterPortfolio('Freelance')} className="filter-button">Freelance</button>
+                <button onClick={()=>filterPortfolio('All')} className="filter-button">Tous</button>
+              </div>
             </div>
-            <div className='flex flex-row justify-evenly gap-2 px-4 md:px-72'>
-                <button onClick={()=>filterPortfolio('All')} className='border-blue-800 border-2
-            text-blue-800 focus:text-white
-            active:bg-blue-800 p-1 px-4 rounded-md
-            focus:ring-violet-300 focus:bg-blue-800 focus:ring '>Tous</button>
-                <button  onClick={()=>filterPortfolio('Site Web')}  className='
-            text-blue-800 focus:text-white
-            active:bg-blue-800 p-1 px-4 rounded-md
-            focus:ring-violet-300 focus:bg-blue-800 focus:ring '>Site Web</button>
-                <button onClick={()=>filterPortfolio('WebApp')} className='border-blue-800 border-2
-            text-blue-800 focus:text-white
-            active:bg-blue-800 p-1 px-4 rounded-md
-            focus:ring-violet-300 focus:bg-blue-800 focus:ring '>Web App</button>
-            </div>
-            <div className='grid grid-cols-2 items-center content-center md:grid-cols-3 lg:grid-cols-3
-        md:px-24 lg:px-48 p-4 '>
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
                 {portfolioList.map((item,index)=>(
-                    <a href={item.url} target="_blank" rel="noopener noreferrer">
-                    <div className='p-2 flex flex-col m-2 rounded-lg bg-blue-100
-                transition-all ease-in-out group hover:scale-110'>
-                        <img src={item.imageUrl} className="h-[180px] object-cover rounded-lg" alt=""/>
-                        <h1 className='text-[14px] group-hover:scale-110 mt-2 text-center  font-bold'>{item.title}</h1>
-                        <h1 className='text-[12px] text-gray-500 px-6 pb-3'></h1>
-                    </div>
-                    </a>
+                    <article key={item.title} className="project-card group flex h-full flex-col overflow-hidden">
+                        <div className={`project-cover project-cover-${index % 4}`}>
+                          {item.imageUrl ? <img src={item.imageUrl} className="h-44 w-full object-contain transition duration-500 group-hover:scale-105" alt={`Identité visuelle du projet ${item.title}`} loading="lazy"/> : <span aria-hidden="true">{item.title.split(' ').map(word=>word[0]).slice(0,2).join('')}</span>}
+                        </div>
+                        <div className="flex flex-1 flex-col p-6">
+                          <div className="flex items-center justify-between gap-3"><span className="text-xs uppercase tracking-[.18em] text-blue-600">{item.type}</span><span className="rounded-full border border-slate-200 px-2 py-1 text-[10px] text-slate-500">{item.status}</span></div>
+                          <h3 className="mt-4 text-2xl font-bold">{item.title}</h3>
+                          <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">{item.desc}</p>
+                          {item.stack?.length > 0 && <div className="mt-5 flex flex-wrap gap-2">{item.stack.map(tech=><span key={tech} className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] text-slate-600">{tech}</span>)}</div>}
+                          {item.url && <a className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800" href={item.url} target="_blank" rel="noopener noreferrer">Voir le projet <span aria-hidden="true">↗</span></a>}
+                        </div>
+                    </article>
                 ))}
             </div>
-        </div>
+          </div>
+        </section>
     )
 
 }
