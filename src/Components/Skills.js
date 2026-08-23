@@ -16,13 +16,6 @@ const skillGroups = [
         tools: ['Firestore', 'Cloud Functions', 'PostgreSQL', 'Express', 'API REST', 'Zod'],
     },
     {
-        title: 'IA & automatisation',
-        icon: '✦',
-        description: 'Intégration d’assistants contextualisés dans des produits web.',
-        primary: ['OpenAI API', 'Responses API'],
-        tools: ['Prompting', 'Contexte métier', 'Chat conversationnel', 'API sécurisée côté serveur'],
-    },
-    {
         title: 'No-code',
         icon: '◇',
         description: 'Prototypage, bases métier et mise en ligne rapide de solutions.',
@@ -52,7 +45,7 @@ function Skills() {
                 <p className="section-kicker">Expertise technique</p>
                 <div className="mt-3 grid gap-6 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
                     <h2 className="text-3xl font-bold leading-tight md:text-5xl">Des technologies choisies pour résoudre des <span className="gradient-text">problèmes métier.</span></h2>
-                    <p className="text-base leading-7 text-slate-400">Ma stack principale combine Vue.js, React, Firebase et Supabase. Je l’étends avec l’IA, le no-code et WordPress lorsque le besoin du projet le justifie.</p>
+                    <p className="text-base leading-7 text-slate-400">Ma stack principale combine Vue.js, React, Firebase et Supabase. Je l’étends avec le no-code et WordPress lorsque le besoin du projet le justifie.</p>
                 </div>
 
                 <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
