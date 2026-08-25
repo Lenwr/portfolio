@@ -1,74 +1,42 @@
-import {useState} from 'react';
-import FluidCanvas from './FluidCanvas';
-import AboutMe from './aboutMe';
-import Portfolio from './Portfolio';
-import Skills from './Skills';
-import Contact from './Contact';
+import {useEffect, useState} from 'react';
 import avatar from '../assets/jefferson-avatar-v3.png';
-import CVJ from '../assets/CVJ.pdf';
+import {portfolio} from '../assets';
 
-const sections = [
-    {id: 'about', label: 'Moi', icon: '☺'},
-    {id: 'projects', label: 'Projets', icon: '▣'},
-    {id: 'skills', label: 'Compétences', icon: '◇'},
-    {id: 'cv', label: 'Mon CV', icon: '↓'},
-    {id: 'contact', label: 'Contact', icon: '✦'},
+const navigation = [['projets', 'Projets'], ['parcours', 'Parcours'], ['competences', 'Compétences'], ['contact', 'Contact']];
+const findProject = title => portfolio.find(item => item.title === title);
+const projects = [
+ {name:'Transport Fomek',period:'Avr. 2026 — en cours',kind:'Application de gestion de fret',description:'Gestion des enlèvements, colis, conteneurs, paiements et expéditions entre la France et le Cameroun.',stack:['Vue.js 3','Firebase','Cloud Functions','Tailwind CSS'],source:findProject('Transport Fomek')},
+ {name:'Aaron Travel',period:'Déc. 2024 — Mars 2025',kind:'Application de gestion logistique',description:'Authentification et rôles, QR codes, scan, suivi des statuts, notifications en temps réel et génération de documents PDF.',stack:['Vue.js 3','Pinia','Firebase','Tailwind CSS','jsPDF'],source:findProject('Aaron Travel')},
+ {name:'WeFret Africa / TrackSend',period:'Juin — Nov. 2024',kind:'Plateforme SaaS de fret',description:'Plateforme multi-entreprises, portail public de suivi par QR code, bordereaux PDF et notifications SMS et WhatsApp.',stack:['Vue.js 3','Pinia','Firebase','Cloud Functions','Twilio'],source:findProject('TrackSend')},
+ {name:'France Distribution',period:'Avr. — Mai 2024',kind:'Application de gestion de stock',description:'Centralisation des produits et des stocks, scan de codes-barres, API OpenFoodFacts, alertes et notifications.',stack:['React','Redux','Supabase','Tailwind CSS']},
+ {name:'Greff’Up / Checkup Impact',period:'Janv. — Mars 2024',kind:'Site & application métier',description:'Site institutionnel et plateforme de questionnaires avant/après avec QR codes, statistiques comparatives et exports.',stack:['WordPress','Next.js','TypeScript','Supabase','Recharts'],source:findProject('Greff’Up')},
 ];
+const experiences = [
+ {period:'2021 — 2025',company:'Automotive System Repair',role:'Webmaster',text:'Mise à jour du site, optimisation SEO, suivi Analytics et ajout de nouvelles fonctionnalités.',stack:'WordPress · Yoast SEO · Google Analytics · Search Console'},
+ {period:'2020',company:'Advizup Consulting',role:'Assistance & support technique',text:'Résolution des incidents utilisateurs, diagnostic, documentation et amélioration des outils de support.',stack:'Support utilisateurs · Documentation technique'},
+ {period:'2019',company:'Atlantic Télécommunication',role:'Administrateur réseau',text:'Supervision du réseau, résolution des problèmes de connexion et configuration des équipements Cisco.',stack:'TCP/IP · Cisco · Supervision réseau'},
+];
+const skills = [
+ ['Frontend','Vue.js · Nuxt · React · Next.js · JavaScript · TypeScript · Tailwind CSS'],
+ ['Backend & données','Node.js · Firebase · Cloud Functions · Supabase · Firestore · PostgreSQL'],
+ ['Fonctionnalités métier','API · Authentification · Rôles · QR codes · Scan · Tracking · PDF'],
+ ['SEO & CMS','WordPress · Yoast · Analytics · Search Console · Softr'],
+ ['IA & productivité','Cursor · ChatGPT · Codex · Claude · Prototypage · Tests · Documentation'],
+];
+const Arrow = () => <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>;
 
 function InteractivePortfolio() {
-    const [activeSection, setActiveSection] = useState(null);
-
-    const openSection = (section) => {
-        if (section === 'cv') {
-            const link = document.createElement('a');
-            link.href = CVJ;
-            link.download = 'cv_jefferson_ABALO.pdf';
-            link.click();
-            return;
-        }
-        setActiveSection(section);
-    };
-
-    return (
-        <main className="interactive-shell">
-            <FluidCanvas />
-            <div className="interactive-content">
-                <header className="intro-copy">
-                    <span className="status-pill"><i/> Disponible pour de nouveaux projets</span>
-                    <p>Salut, je suis</p>
-                    <h1>Jefferson Abalo</h1>
-                    <h2>Développeur Full-Stack · Applications métier & SaaS</h2>
-                </header>
-
-                <div className="avatar-stage">
-                    <span className="avatar-halo" aria-hidden="true"/>
-                    <img src={avatar} alt="Avatar illustré de Jefferson Abalo tenant un ordinateur portable"/>
-                </div>
-
-                <nav className="shortcut-grid" aria-label="Explorer le portfolio">
-                    {sections.map((section) => (
-                        <button key={section.id} type="button" onClick={() => openSection(section.id)}>
-                            <span aria-hidden="true">{section.icon}</span>
-                            <strong>{section.label}</strong>
-                        </button>
-                    ))}
-                </nav>
-                <p className="background-name" aria-hidden="true">Jefferson</p>
-            </div>
-
-            {activeSection && (
-                <div className="panel-backdrop" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && setActiveSection(null)}>
-                    <section className="content-panel" role="dialog" aria-modal="true" aria-label="Contenu du portfolio">
-                        <button className="panel-close" type="button" onClick={() => setActiveSection(null)} aria-label="Fermer">×</button>
-                        {activeSection === 'about' && <AboutMe />}
-                        {activeSection === 'projects' && <Portfolio />}
-                        {activeSection === 'skills' && <Skills />}
-                        {activeSection === 'contact' && <Contact />}
-                    </section>
-                </div>
-            )}
-        </main>
-    );
+ const [menuOpen,setMenuOpen]=useState(false);
+ useEffect(()=>{const close=e=>e.key==='Escape'&&setMenuOpen(false);window.addEventListener('keydown',close);return()=>window.removeEventListener('keydown',close)},[]);
+ return <main>
+  <header className="site-header"><a className="brand" href="#accueil"><span>JA</span> Jefferson Abalo</a><button className="menu-toggle" onClick={()=>setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-label="Ouvrir le menu">{menuOpen?'×':'☰'}</button><nav className={`main-nav ${menuOpen?'is-open':''}`}>{navigation.map(([id,label])=><a key={id} href={`#${id}`} onClick={()=>setMenuOpen(false)}>{label}</a>)}<a className="nav-cta" href="mailto:jeffersonabalo@outlook.fr">Me contacter</a></nav></header>
+  <section className="hero" id="accueil"><div className="hero-copy"><p className="eyebrow"><span/> Disponible pour une nouvelle opportunité</p><h1>Je conçois des applications web qui font avancer les <em>équipes.</em></h1><p className="hero-lead">Développeur full-stack freelance spécialisé en Vue.js, React, Firebase et Supabase. J’imagine des outils métier simples pour la logistique, le suivi et la gestion quotidienne.</p><div className="hero-actions"><a className="button button-primary" href="#projets">Découvrir mes projets <Arrow/></a><button className="button button-secondary" onClick={()=>window.print()}>Imprimer mon CV</button></div><div className="hero-meta"><span>Suresnes, France</span><span>+ de 2 ans d’expérience freelance</span><span>5 applications livrées</span></div></div><div className="portrait-wrap"><div className="portrait-card"><img src={avatar} alt="Jefferson Abalo, développeur full-stack"/></div><div className="floating-note"><strong>Full-stack</strong><span>Applications métier · SaaS</span></div></div></section>
+  <section className="intro-strip"><p>J’accompagne des entreprises et des entrepreneurs de l’idée à la mise en ligne.</p><div><span>01 — Analyse</span><span>02 — Conception</span><span>03 — Développement</span><span>04 — Déploiement</span></div></section>
+  <section className="section projects-section" id="projets"><div className="section-heading"><div><p className="eyebrow">Projets sélectionnés</p><h2>Des solutions pensées pour le <em>terrain.</em></h2></div><p>Des produits concrets qui centralisent les données, réduisent les tâches manuelles et offrent un meilleur suivi aux équipes comme à leurs clients.</p></div><div className="project-list">{projects.map((project,index)=><article className="project-row" key={project.name}><div className="project-number">0{index+1}</div><div className="project-visual">{project.source?.imageUrl?<img src={project.source.imageUrl} alt=""/>:<span>{project.name.split(' ').map(w=>w[0]).slice(0,2).join('')}</span>}</div><div className="project-copy"><div className="project-top"><p>{project.kind}</p><time>{project.period}</time></div><h3>{project.name}</h3><p>{project.description}</p><div className="tags">{project.stack.map(item=><span key={item}>{item}</span>)}</div></div>{project.source?.url&&<a className="round-link" href={project.source.url} target="_blank" rel="noreferrer" aria-label={`Voir ${project.name}`}><Arrow/></a>}</article>)}</div></section>
+  <section className="section journey-section" id="parcours"><div className="section-heading"><div><p className="eyebrow">Parcours</p><h2>Expérience & <em>formation.</em></h2></div></div><div className="journey-grid"><div className="timeline"><h3>Expériences professionnelles</h3>{experiences.map(item=><article key={item.company}><time>{item.period}</time><div><p>{item.company}</p><h4>{item.role}</h4><span>{item.text}</span><small>{item.stack}</small></div></article>)}</div><aside className="education-card"><p className="card-label">Formation</p><article><time>2022 — 2023</time><h3>Mastère Expert en Stratégie Digitale</h3><p>Spécialisation Tech Lead</p><strong>Digital Campus Paris</strong></article><article><time>2015 — 2017</time><h3>Mastère Réseaux, Télécommunications & Mobilités</h3><strong>ESGIS</strong></article><div className="language"><span>Langues</span><p>Français <strong>Langue maternelle</strong></p><p>Anglais <strong>Niveau B1</strong></p></div></aside></div></section>
+  <section className="section skills-section" id="competences"><div className="section-heading"><div><p className="eyebrow">Compétences</p><h2>Une stack moderne, choisie selon le <em>besoin.</em></h2></div><p>Je combine développement, compréhension métier et culture produit pour livrer des applications solides, lisibles et évolutives.</p></div><div className="skills-grid">{skills.map(([title,items],index)=><article key={title}><span>0{index+1}</span><h3>{title}</h3><p>{items}</p></article>)}</div></section>
+  <section className="contact-section" id="contact"><p className="eyebrow">Un projet ? Une opportunité ?</p><h2>Construisons quelque chose d’<em>utile.</em></h2><p>Je suis disponible pour échanger autour d’une mission freelance ou d’un poste en développement full-stack.</p><a href="mailto:jeffersonabalo@outlook.fr">jeffersonabalo@outlook.fr <Arrow/></a><div className="contact-links"><a href="tel:+33676492528">06 76 49 25 28</a><a href="https://www.linkedin.com/in/jefferson-abalo" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/Lenwr" target="_blank" rel="noreferrer">GitHub</a></div></section>
+  <footer><span>© 2026 Jefferson Abalo</span><a href="#accueil">Retour en haut ↑</a></footer>
+ </main>;
 }
-
 export default InteractivePortfolio;
