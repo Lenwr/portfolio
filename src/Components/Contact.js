@@ -52,7 +52,7 @@ function Contact() {
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.85fr_1.15fr]">
             <div>
               <p className="section-kicker">Contact</p>
-              <h2 className="mt-3 text-4xl font-bold leading-tight md:text-6xl">Construisons quelque chose de <span className="gradient-text">mémorable.</span></h2>
+              <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl md:text-6xl">Construisons quelque chose de <span className="gradient-text">mémorable.</span></h2>
               <p className="mt-6 max-w-lg text-lg leading-8 text-slate-400">Une idée, une mission ou une opportunité ? Écris-moi et discutons de la meilleure façon de la concrétiser.</p>
               <a className="mt-6 inline-flex text-sm font-semibold text-cyan-300 hover:text-cyan-200" href="mailto:jeffersonabalo@outlook.fr">jeffersonabalo@outlook.fr</a>
               <img src={contactusbg} alt="" className="mt-8 hidden w-64 opacity-80 lg:block" loading="lazy"/>

@@ -13,6 +13,7 @@ body {
 .interactive-shell {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
   color: #172033;
 }
@@ -28,6 +29,7 @@ body {
   z-index: 1;
   display: flex;
   min-height: 100vh;
+  min-height: 100dvh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -78,6 +80,8 @@ body {
 }
 
 .intro-copy h2 {
+  max-width: 42rem;
+  margin-inline: auto;
   margin-top: .55rem;
   color: #455269;
   font-size: clamp(1.2rem, 2.5vw, 1.8rem);
@@ -122,6 +126,7 @@ body {
 
 .shortcut-grid button {
   display: flex;
+  min-width: 0;
   min-height: 5.2rem;
   flex-direction: column;
   align-items: center;
@@ -143,7 +148,12 @@ body {
 }
 
 .shortcut-grid span { color: #1677e8; font-size: 1.35rem; }
-.shortcut-grid strong { font-size: .78rem; font-weight: 600; }
+.shortcut-grid strong {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: .78rem;
+  font-weight: 600;
+}
 
 .background-name {
   position: absolute;
@@ -294,12 +304,62 @@ body {
 @keyframes panel-in { from { opacity: 0; transform: translateY(24px) scale(.98); } }
 
 @media (max-width: 640px) {
-  .interactive-content { justify-content: flex-start; padding-top: 2rem; overflow-y: auto; }
+  .interactive-content {
+    justify-content: flex-start;
+    min-height: 100svh;
+    padding: 1.5rem .75rem 2rem;
+    overflow-y: auto;
+  }
+  .intro-copy h1 { font-size: clamp(2.25rem, 12vw, 3.4rem); }
+  .intro-copy h2 { max-width: 22rem; font-size: clamp(1rem, 5vw, 1.25rem); }
   .avatar-stage { margin-top: -.5rem; }
   .shortcut-grid { grid-template-columns: repeat(3, 1fr); }
   .shortcut-grid button { min-height: 4.5rem; }
   .background-name { display: none; }
-  .content-panel { border-radius: 1.4rem; }
+  .panel-backdrop {
+    align-items: stretch;
+    padding: .5rem;
+  }
+  .content-panel {
+    width: 100%;
+    max-height: calc(100dvh - 1rem);
+    border-radius: 1.25rem;
+    overscroll-behavior: contain;
+  }
+  .panel-close {
+    top: .75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin: .75rem .75rem -3.5rem auto;
+  }
+  .content-panel section {
+    padding-inline: 1rem;
+    padding-block: 4.5rem 3.5rem;
+  }
+  .project-cover { min-height: 10rem; padding: 1rem; }
+  .project-card > div:last-child { padding: 1.25rem; }
+}
+
+@media (max-width: 380px) {
+  .status-pill { font-size: .66rem; }
+  .avatar-stage {
+    width: min(17rem, 68vw);
+    height: min(15rem, 60vw);
+  }
+  .shortcut-grid {
+    width: min(20rem, 94vw);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-height: 680px) and (orientation: landscape) {
+  .interactive-content { padding-block: 1rem; }
+  .avatar-stage {
+    width: 10rem;
+    height: 8rem;
+    margin-top: -.5rem;
+  }
+  .shortcut-grid button { min-height: 3.8rem; }
 }
 
 button:disabled {

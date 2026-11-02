@@ -18,7 +18,10 @@ function FluidCanvas() {
         let frame;
 
         const createNodes = () => {
-            const count = Math.min(72, Math.max(32, Math.floor(window.innerWidth / 22)));
+            const isMobile = window.innerWidth < 640;
+            const count = isMobile
+                ? Math.min(28, Math.max(18, Math.floor(window.innerWidth / 16)))
+                : Math.min(72, Math.max(32, Math.floor(window.innerWidth / 22)));
             nodes = Array.from({length: count}, (_, index) => ({
                 x: Math.random() * window.innerWidth,
                 y: Math.random() * window.innerHeight,

@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import FluidCanvas from './FluidCanvas';
 import AboutMe from './aboutMe';
 import Portfolio from './Portfolio';
@@ -17,6 +17,25 @@ const sections = [
 
 function InteractivePortfolio() {
     const [activeSection, setActiveSection] = useState(null);
+    const closeButtonRef = useRef(null);
+
+    useEffect(() => {
+        if (!activeSection) return undefined;
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        closeButtonRef.current?.focus();
+
+        const closeOnEscape = (event) => {
+            if (event.key === 'Escape') setActiveSection(null);
+        };
+        window.addEventListener('keydown', closeOnEscape);
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            window.removeEventListener('keydown', closeOnEscape);
+        };
+    }, [activeSection]);
 
     const openSection = (section) => {
         if (section === 'cv') {
@@ -59,7 +78,7 @@ function InteractivePortfolio() {
             {activeSection && (
                 <div className="panel-backdrop" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && setActiveSection(null)}>
                     <section className="content-panel" role="dialog" aria-modal="true" aria-label="Contenu du portfolio">
-                        <button className="panel-close" type="button" onClick={() => setActiveSection(null)} aria-label="Fermer">×</button>
+                        <button ref={closeButtonRef} className="panel-close" type="button" onClick={() => setActiveSection(null)} aria-label="Fermer">×</button>
                         {activeSection === 'about' && <AboutMe />}
                         {activeSection === 'projects' && <Portfolio />}
                         {activeSection === 'skills' && <Skills />}

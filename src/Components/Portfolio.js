@@ -26,7 +26,7 @@ function Portfolio() {
                           {item.imageUrl ? <img src={item.imageUrl} className="h-44 w-full object-contain transition duration-500 group-hover:scale-105" alt={`Identité visuelle du projet ${item.title}`} loading="lazy"/> : <span aria-hidden="true">{item.title.split(' ').map(word=>word[0]).slice(0,2).join('')}</span>}
                         </div>
                         <div className="flex flex-1 flex-col p-6">
-                          <div className="flex items-center justify-between gap-3"><span className="text-xs uppercase tracking-[.18em] text-blue-600">{item.type}</span><span className="rounded-full border border-slate-200 px-2 py-1 text-[10px] text-slate-500">{item.status}</span></div>
+                          <div className="flex flex-wrap items-center justify-between gap-3"><span className="text-xs uppercase tracking-[.18em] text-blue-600">{item.type}</span><span className="rounded-full border border-slate-200 px-2 py-1 text-[10px] text-slate-500">{item.status}</span></div>
                           <h3 className="mt-4 text-2xl font-bold">{item.title}</h3>
                           <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">{item.desc}</p>
                           {item.stack?.length > 0 && <div className="mt-5 flex flex-wrap gap-2">{item.stack.map(tech=><span key={tech} className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] text-slate-600">{tech}</span>)}</div>}
